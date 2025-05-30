@@ -1,34 +1,33 @@
-/* General Body Styling */
 body {
-    font-family: 'Inter', sans-serif; /* Using Inter font as per instructions */
-    background-color: #f0f2f5; /* Light grey background */
-    color: #333; /* Dark grey text */
-    min-height: 100vh; /* Ensure body takes full viewport height */
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5; 
+    color: #333; 
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
 }
 
-/* Card Styling for Forms */
+
 .card {
     border: none;
-    border-radius: 15px; /* Rounded corners for cards */
-    overflow: hidden; /* Ensure content respects border-radius */
+    border-radius: 15px;
+    overflow: hidden; 
 }
 
-/* Specific Card Widths */
+
 .login-card, .register-card {
-    max-width: 450px; /* Max width for login/register forms */
-    width: 100%; /* Make it responsive */
+    max-width: 450px; 
+    width: 100%; 
 }
 
 .complaint-card {
-    max-width: 700px; /* Max width for file complaint form */
+    max-width: 700px; 
     width: 100%;
 }
 
-/* Form Control Styling */
+
 .form-control {
-    border-radius: 8px; /* Slightly more rounded inputs */
+    border-radius: 8px; 
     border: 1px solid #ced4da;
     padding: 0.75rem 1rem;
 }
@@ -38,12 +37,12 @@ body {
     box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
 }
 
-/* Button Styling */
+
 .btn {
     padding: 0.75rem 1.25rem;
     font-weight: 600;
-    border-radius: 8px; /* Rounded buttons */
-    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+    border-radius: 8px; 
+    transition: all 0.3s ease; 
 }
 
 .btn-primary {
@@ -54,7 +53,7 @@ body {
 .btn-primary:hover {
     background-color: #0056b3;
     border-color: #0056b3;
-    transform: translateY(-2px); /* Slight lift on hover */
+    transform: translateY(-2px); 
 }
 
 .btn-success {
@@ -68,9 +67,9 @@ body {
     transform: translateY(-2px);
 }
 
-/* Navbar Styling */
+
 .navbar {
-    background-color: #343a40 !important; /* Darker navbar */
+    background-color: #343a40 !important; 
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: 1rem 1.5rem;
@@ -89,35 +88,35 @@ body {
 }
 
 .nav-link:hover {
-    color: #007bff !important; /* Highlight on hover */
+    color: #007bff !important; 
 }
 
-/* Table Styling */
+
 .table {
-    border-radius: 10px; /* Rounded corners for the table container */
+    border-radius: 10px; 
     margin-top: 20px;
 }
 
 .table thead th {
-    background-color: #343a40; /* Dark header */
+    background-color: #343a40; 
     color: white;
     border-bottom: none;
     padding: 1rem;
 }
 
 .table tbody tr:nth-child(even) {
-    background-color: #f8f9fa; /* Zebra striping */
+    background-color: #f8f9fa; 
 }
 
 .table tbody tr:hover {
-    background-color: #e9ecef; /* Hover effect for rows */
+    background-color: #e9ecef; 
 }
 
 .table td, .table th {
     vertical-align: middle;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
     .login-card, .register-card, .complaint-card {
         padding: 20px;
