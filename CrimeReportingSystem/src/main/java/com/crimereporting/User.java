@@ -2,19 +2,16 @@ package com.crimereporting;
 
 import java.time.LocalDateTime;
 
-/**
- * Represents a User in the Crime Reporting System.
- * This is a POJO (Plain Old Java Object) for user data.
- */
+
 public class User {
     private int id;
     private String fullname;
     private String username;
     private String email;
-    private String password; // WARNING: In a real application, store hashed passwords!
+    private String password; 
     private LocalDateTime createdAt;
 
-    // Constructors
+   
     public User() {
     }
 
@@ -27,7 +24,7 @@ public class User {
         this.createdAt = createdAt;
     }
 
-    // Getters and Setters for all fields
+ 
     public int getId() {
         return id;
     }
