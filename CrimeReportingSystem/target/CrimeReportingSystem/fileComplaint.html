@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File a Complaint</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Crime Reporting System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="fileComplaint.html">File Complaint</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="viewComplaints.html">View Complaints</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AuthServlet?action=logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="card p-4 shadow-lg rounded-4 complaint-card">
+            <h2 class="card-title text-center mb-4">File a New Complaint</h2>
+            <form action="ComplaintServlet" method="post">
+                <input type="hidden" name="action" value="file">
+                <div class="mb-3">
+                    <label for="crimeType" class="form-label">Type of Crime</label>
+                    <input type="text" class="form-control rounded-3" id="crimeType" name="crimeType" placeholder="e.g., Theft, Assault, Vandalism" required>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location of Incident</label>
+                    <input type="text" class="form-control rounded-3" id="location" name="location" placeholder="Street, City, State" required>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date of Incident</label>
+                    <input type="date" class="form-control rounded-3" id="date" name="date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control rounded-3" id="description" name="description" rows="5" placeholder="Provide a detailed description of the incident..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 rounded-3 mt-3">Submit Complaint</button>
+            </form>
+            <div id="message" class="mt-3 text-center">
+                </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Function to display messages from URL parameters
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const message = urlParams.get('message');
+            const type = urlParams.get('type');
+
+            if (message) {
+                const messageDiv = document.getElementById('message');
+                messageDiv.innerHTML = `<p class="text-${type === 'success' ? 'success' : 'danger'}">${decodeURIComponent(message)}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
