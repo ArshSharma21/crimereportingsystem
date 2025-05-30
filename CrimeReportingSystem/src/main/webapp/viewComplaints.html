@@ -58,7 +58,7 @@
     <script src="js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetchComplaints(); // Call function to fetch complaints when the page loads
+            fetchComplaints(); 
 
             const urlParams = new URLSearchParams(window.location.search);
             const message = urlParams.get('message');
@@ -70,18 +70,18 @@
             }
         });
 
-        // Function to fetch complaints from the backend
+   
         async function fetchComplaints() {
             try {
-                // IMPORTANT: Changed to absolute URL for fetching complaints from Tomcat
+               
                 const response = await fetch('http://localhost:8080/CrimeReportingSystem/ComplaintServlet?action=view');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                const complaints = await response.json(); // Assuming servlet returns JSON
+                const complaints = await response.json(); 
 
                 const tableBody = document.getElementById('complaintsTableBody');
-                tableBody.innerHTML = ''; // Clear existing rows
+                tableBody.innerHTML = ''; 
 
                 if (complaints.length === 0) {
                     tableBody.innerHTML = '<tr><td colspan="8" class="text-center">No complaints filed yet.</td></tr>';
