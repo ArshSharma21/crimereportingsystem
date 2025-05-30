@@ -3,10 +3,6 @@ package com.crimereporting;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-/**
- * Represents a Crime Complaint in the Crime Reporting System.
- * This is a POJO for complaint data.
- */
 public class Complaint {
     private int id;
     private int userId;
@@ -16,9 +12,8 @@ public class Complaint {
     private String description;
     private String status;
     private LocalDateTime filedOn;
-    private String filedByUsername; // To display the username of the filer in the UI
+    private String filedByUsername;
 
-    // Constructors
     public Complaint() {
     }
 
@@ -33,8 +28,7 @@ public class Complaint {
         this.status = status;
         this.filedOn = filedOn;
     }
-
-    // Getters and Setters for all fields
+    
     public int getId() {
         return id;
     }
